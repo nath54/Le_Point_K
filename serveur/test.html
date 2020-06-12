@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+    </head>
+    <body>
+        <input id="input" type="text" />
+        <button id="button"></button>
+        <div id="etat_articles"></div>
+
+
+
+        <script>
+            var websocket = new WebSocket("ws://127.0.0.1:6789/");
+            var inpute = document.querySelector("#input");
+            var bouton = document.querySelector("#button");
+            var divarts = document.querySelector("#etat_articles");
+
+            onclick.bouton = function(){
+                websocket.send( JSON.stringify({"type":"message","value":value.inpute} );
+            }
+
+            function art_vu(art_id){
+
+            }
+
+
+            websocket.onmessage = function (event) {
+                data = JSON.parse(event.data);
+                switch (data.type) {
+                    case 'etat_articles':
+                        var articles = data.articles;
+                        for(c of divarts.children){ divarts.removeChild(c); }
+                        divarts.children=[];
+                        for(a of articles){
+                            var pp=document.createElement("p");
+                            pp.style.border="2px solid black";
+                            pp.style.margin="5px";
+                            pp.innerHTML=a.nom+" : "+a.nb_vues;
+                            divarts.appendChild(pp);
+                        }
+                        break;
+                    default:
+                        console.error(
+                            "unsupported event", data);
+                }
+            };
+
+        </script>
+    </body>
+</html>
