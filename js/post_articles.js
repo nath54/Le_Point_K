@@ -67,17 +67,27 @@ function create_article(article){
 
 function main(){
     if(list_articles!=undefined){
-        var index=0;
-        for(a of list_articles){
-            if(Math.abs(list_articles.length-index) < 3 && document.getElementById("row_recent_posts")!=undefined ){
+        var nb_recent=0;
+        var nb_eco=0;
+        for(index=list_articles.length;index>0;index--){
+            a=list_articles[index];
+            //
+            if(nb_recent < 3 && document.getElementById("row_recent_posts")!=undefined ){
                 var art=create_article(a);
                 document.getElementById("row_recent_posts").appendChild( art );
+                nb_recent+=1;
             }
-            index++;
+            //
+            if(nb_recent < 3 && document.getElementById("row_recent_posts")!=undefined ){
+                var art=create_article(a);
+                document.getElementById("row_recent_posts").appendChild( art );
+                nb_recent+=1;
+            }
         }
     }
     
 }
+
 
 main();
 
