@@ -10,6 +10,5 @@ Ce journal est encore vide, il ne vient que d'être créé.
 
 [lien](https://nath54.github.io/Le_Point_K/index.html)
 
-# Contributeurs :
 
 
