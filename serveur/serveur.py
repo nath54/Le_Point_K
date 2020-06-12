@@ -7,6 +7,8 @@ class Main:
     def __init__(self):
         self.liste_ecriture_logs=[]
         self.liste_ecriture_articles=[]
+        self.liste_ecriture_commentaires=[]
+        self.liste_ecriture_accounts=[]
         #
         print("Le serveur est lancé")        
 
@@ -23,20 +25,13 @@ class Main:
             f.close()
             del(self.liste_ecriture_logs[0])
 
-
-
     def envoyer_message(self,txt):
         pass
 
     def post_commentaire(self,txt):
-        pass
-
-    def 
-
-
+        self.liste_ecriture_commentaire.append(txt)
 
     def get_texte(self):
-
         txt=""
         if(txt.split("|")[0]=="commentaire"):
             self.post_commentaire(txt)
