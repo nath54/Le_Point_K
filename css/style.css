@@ -985,8 +985,42 @@ RESPONSIVE
     }
 }
 
-.auteur{
+.aligndroite{
     text-align: right;
 }
 
+.imgart1{
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
 
+.figure_img{
+    float: right;
+
+}
+
+.figureart {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin-left:15px;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+.imgart {
+    max-width: 220px;
+    max-height: 150px;
+}
+
+.figcaptionart {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
