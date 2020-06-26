@@ -1043,3 +1043,7 @@ RESPONSIVE
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.remplissage{
+    height:40px;
+}
