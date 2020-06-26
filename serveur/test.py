@@ -30,7 +30,7 @@ class Serveur():
         if not "save.txt" in os.listdir("./"):
             self.articles=[
                 {"id":"000000","titre":"Faut-il interdire le glyphosate ?","date":"14 juin 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":None,"nbvues":0,"commentaires":[]},
-                {"id":"000001","titre":"Le nucléaire, une bonne source d'énergie ?","date":"14 juin 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":None,"nbvues":0,"commentaires":[]},
+                {"id":"000001","titre":"Le nucléaire, une bonne source d'énergie ?","date":"16 juin 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":None,"nbvues":0,"commentaires":[]},
             ]
         else:
             self.load()

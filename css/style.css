@@ -1024,3 +1024,19 @@ RESPONSIVE
     padding: 3px;
     text-align: center;
 }
+
+.varjs{
+    display: none;
+}
+
+.poste{
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+.rowarticles{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
