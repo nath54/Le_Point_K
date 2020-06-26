@@ -23,7 +23,7 @@ const l_arts_pop=trie_articles_pop(list_articles);
 
 //
 
-alert("il y a actuellement "+list_articles.length+" articles sur le site");
+//alert("il y a actuellement "+list_articles.length+" articles sur le site");
 
 if(document.getElementById("nb_art_eco")!=undefined){
     document.getElementById("nb_art_eco").innerHTML=tries_ecol.length;
