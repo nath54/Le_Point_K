@@ -68,14 +68,16 @@ function create_article(article){
     span.setAttribute("class","post-date");
     span.innerHTML=article["date"];
 
-    var h3=document.createElement("h3");
-    h3.setAttribute("class","post-title");
-
     var aa3=document.createElement("a");
     aa3.setAttribute("href",article["lien"]);
-    aa3.innerHTML=article["titre"];
 
-    h3.appendChild(aa3) 
+    var h3=document.createElement("h3");
+    h3.setAttribute("class","post-title");    
+    h3.innerHTML=article["titre"];
+
+    aa3.appendChild(h3) 
+
+    
 
     div4.appendChild(aa2);
     div4.appendChild(span);
@@ -83,10 +85,10 @@ function create_article(article){
     aa.appendChild(img); 
 
     div3.appendChild(div4);
+    div3.appendChild(aa3)
     
     div2.appendChild(aa);
     div2.appendChild(div3);
-    div2.appendChild(h3);
 
     return div2;
 }
