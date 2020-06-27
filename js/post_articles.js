@@ -12,11 +12,6 @@
     </div>
 */
 
-const lst_eco=["écologie","ecologie","ecology"];
-const lst_pol=["politique"];
-const lst_inf=["info","informatique"];
-const lst_san=["sante","santé"];
-const l_arts_pop=trie_articles_pop(list_articles);
 
 
 
@@ -118,21 +113,7 @@ function create_article(article){
 }
 
 
-function trie_articles_pop(articles){
-    l_articles=[];
-    for(a of articles){ l_articles.push(a); }
-    //
-    for(i=0; i<l_articles.length; i++){
-        for(j=0; j<i; j++){
-            if(l_articles[i]["nbvues"]>l_articles[j]["nbvues"]){
-                temp=l_articles[i];
-                l_articles[i]=l_articles[j];
-                l_articles[j]=temp;
-            }
-        }
-    }
-    return l_articles;
-}
+
 
 
 function main(){

@@ -19,6 +19,27 @@ list_articles=[
 {"id":"000000","titre":"Faut-il interdire le glyphosate ?","date":"17 fevrier 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
 ]
 
+function trie_articles_pop(articles){
+    l_articles=[];
+    for(a of articles){ l_articles.push(a); }
+    //
+    for(i=0; i<l_articles.length; i++){
+        for(j=0; j<i; j++){
+            if(l_articles[i]["nbvues"]>l_articles[j]["nbvues"]){
+                temp=l_articles[i];
+                l_articles[i]=l_articles[j];
+                l_articles[j]=temp;
+            }
+        }
+    }
+    return l_articles;
+}
+
+const lst_eco=["écologie","ecologie","ecology"];
+const lst_pol=["politique"];
+const lst_inf=["info","informatique"];
+const lst_san=["sante","santé"];
+const l_arts_pop=trie_articles_pop(list_articles);
 
 tries_ecol=[];
 tries_poli=[];
@@ -28,10 +49,10 @@ tries_journaux={};
 
 
 for(a of list_articles){
-    if(a["category"]=="ecologie"){ tries_ecol.push(a); }
-    if(a["category"]=="politique"){ tries_poli.push(a); }
-    if(a["category"]=="informatique"){ tries_info.push(a); }
-    if(a["category"]=="sante"){ tries_sant.push(a); }
+    if(lst_eco.includes(a["category"])){ tries_ecol.push(a); }
+    if(lst_pol.includes(a["category"])){ tries_poli.push(a); }
+    if(lst_inf.includes(a["category"])){ tries_info.push(a); }
+    if(lst_san.includes(a["category"])){ tries_sant.push(a); }
     //
     if(!Object.keys(tries_journaux).includes(a["journal"])){
         tries_journaux[a["journal"]]=[a];
@@ -40,7 +61,5 @@ for(a of list_articles){
         tries_journaux[a["journal"]].push(a);
     }
 }
-
-
 
 
