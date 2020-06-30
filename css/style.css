@@ -1047,3 +1047,7 @@ RESPONSIVE
 .remplissage{
     height:40px;
 }
+
+.titre_cl_gris{
+    color:rgb(50, 50, 50);
+}
