@@ -177,20 +177,20 @@
 									<div class="col-md-7">
 										<div class="form-group">
 											<span>Email</span>
-											<input class="input" type="email" name="email">
+											<input class="input" type="email" name="email" id="input_email">
 										</div>
 									</div>
 									<div class="col-md-7">
 										<div class="form-group">
 											<span>Objet</span>
-											<input class="input" type="text" name="subject">
+											<input class="input" type="text" name="subject" id="input_object">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea class="input" name="message" placeholder="Message"></textarea>
+											<textarea class="input" name="message" placeholder="Message" id="input_texte"></textarea>
 										</div>
-										<button class="primary-button">Envoyer</button>
+										<button class="primary-button" id="button_send" onclick="send_message();">Envoyer</button>
 									</div>
 								</div>
 							</form>
