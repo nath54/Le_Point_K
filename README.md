@@ -12,5 +12,3 @@ le site direct : [lien](https://nath54.github.io/Le_Point_K/main.html)
 
 avec framalink ( qui renvoie au site direct ) : [lien](https://frama.link/lepointK)
 
-
-
