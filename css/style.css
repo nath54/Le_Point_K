@@ -1055,3 +1055,12 @@ RESPONSIVE
 .cache{
     display: none;
 }
+
+.col_reseaux{
+    display:flex;
+    flex-direction: row;
+}
+
+.o_reseau{
+    margin:auto;
+}
