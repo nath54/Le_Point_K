@@ -64,9 +64,13 @@ function create_article(){
             document.getElementById("cat_li").setAttribute("href","../category_sante.html");
         }
         //
+        /*
         $(function(){
             $("#contenu_de_larticle").load(art["content"]); 
         });
+        */
+        var dd=document.createElement("div");
+        dd.setAttribute("data-include",art["content"]);
     }
 
 }
