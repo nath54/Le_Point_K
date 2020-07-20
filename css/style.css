@@ -1064,3 +1064,8 @@ RESPONSIVE
 .o_reseau{
     margin:auto;
 }
+
+iframe{
+    border: none;
+}
+

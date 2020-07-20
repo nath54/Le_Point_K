@@ -63,15 +63,37 @@ function create_article(){
             document.getElementById("cat_li").innerHTML="santé";
             document.getElementById("cat_li").setAttribute("href","../category_sante.html");
         }
-        //
         /*
-        $(function(){
-            $("#contenu_de_larticle").load(art["content"]); 
-        });
-        */
-        var dd=document.createElement("div");
-        dd.setAttribute("data-include",art["content"]);
+        var dd=document.createElement("include");
+        dd.setAttribute("src",art["content"]);
         document.getElementById("contenu_de_larticle").appendChild(dd);
+        //
+        (() => {
+            const includes = document.getElementsByTagName('include');
+            [].forEach.call(includes, i => {
+                let filePath = i.getAttribute('src');
+                fetch(filePath).then(file => {
+                    file.text().then(content => {
+                        i.insertAdjacentHTML('afterend', content);
+                        i.remove();
+                    });
+                });
+            });
+        })();
+        */
+        //
+        var l =document.createElement("link");
+        l.setAttribute("href",art["content"]);
+        l.setAttribute("rel","import");
+        l.setAttribute("id","limport");
+        document.getElementById("head").appendChild(l);
+        //
+        var extern = document.getElementById("limport").import;
+        console.log(extern);
+        document.getElementById("contenu_de_larticle").replaceChild(
+            extern.getElementById("content")
+        );
+        
     }
 
 }
