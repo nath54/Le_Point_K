@@ -81,18 +81,23 @@ function create_article(){
             });
         })();
         */
+        /*
         //
-        var l =document.createElement("link");
-        l.setAttribute("href",art["content"]);
-        l.setAttribute("rel","import");
-        l.setAttribute("id","limport");
-        document.getElementById("head").appendChild(l);
-        //
-        var extern = document.getElementById("limport").import;
-        console.log(extern);
-        document.getElementById("contenu_de_larticle").replaceChild(
-            extern.getElementById("content")
-        );
+        var link = document.createElement('link');
+        link.rel = 'import';
+        link.href = art["content"];
+        //link.setAttribute('async', ''); // make it async!
+        link.onload = function(e) { console.log("loaded"); };
+        link.onerror = function(e) { alert("error while loading the article"); };
+        document.head.appendChild(link);
+        var cont = document.querySelector('link[rel="import"]');
+        console.log(cont);
+        var content=cont.import;
+        console.log(content);
+        //document.getElementById("contenu_de_larticle").appendChild(content);
+        */
+        $("#contenu_de_larticle").load(art["content"]); 
+        
         
     }
 
