@@ -71,11 +71,12 @@ function create_article(){
         */
         var dd=document.createElement("div");
         dd.setAttribute("data-include",art["content"]);
+        document.getElementById("contenu_de_larticle").appendChild(dd);
     }
 
 }
 
-document.body.setAttribute("onload","create_article();");
+create_article();
 
 
 
