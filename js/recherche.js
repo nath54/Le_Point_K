@@ -14,6 +14,7 @@ else{
 
 function posts(articles){
     var dive=document.createElement("div");
+    dive.setAttribute("class","row rowarticles");
     if(articles.length>=1){
         for(art of articles){
             if(art!=undefined){
