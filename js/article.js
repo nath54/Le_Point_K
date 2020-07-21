@@ -42,7 +42,7 @@ function create_balise(bal){
     return null;
 }
 
-function create_article(){
+function load_articles(){
     if(article_contents[id_article]!=undefined){
         art=article_contents[id_article];
         document.getElementById("titre_h1").innerHTML=art["dossier"];
@@ -71,7 +71,7 @@ function create_article(){
 
 }
 
-create_article();
+load_articles();
 
 
 
