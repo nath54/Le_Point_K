@@ -60,7 +60,7 @@
 							<button class="aside-btn"><i class="fa fa-bars"></i></button>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
 							<div class="search-form">
-								<input class="search-input" type="text" name="search" placeholder="Rechercher ...">
+								<input class="search-input" type="text" name="search" placeholder="Rechercher ..." id="inpsearch" onkeypress="inpute_key(event);">
 								<button class="search-close"><i class="fa fa-times"></i></button>
 							</div>
 						</div>
@@ -81,11 +81,10 @@
 						</ul>
 					</div>
 					<!-- /nav -->
-
-
+					
 					<!-- social links -->
 					<div class="section-row">
-						<h3>Nous suivre</h3>
+						<h3>Suivez nous</h3>
 						<ul class="nav-aside-social">
 							<li><a href="https://instagram.com/lepointk_off?igshid=tmvioijejrzq"><i class="fa fa-instagram"></i></a></li>
 							<li><a href="https://discord.gg/5NUZFbw"><i class="fa fa-discord"></i></a></li>
@@ -128,11 +127,11 @@
 				<div class="row">
 					<div class="col-md-8">
 						<div class="section-row">
-							<p>Le PoinK ( ou le Point-K ou le PoinKa ) est un journal/site web créé par un groupe d'élève du lycée Henri-Poincaré dans lequel sont publié des articles.</p>
+							<p>Le PoinK (ou le Point-K ou le PoinKa) est un journal/site web créé par un groupe d'élève du lycée Henri-Poincaré dans lequel sont publiés des articles.</p>
 							<figure class="figure-img">
 								<img class="img-responsive" src="./img/logo.png" alt="">
 							</figure>
-							<p>Il existe sous forme papier, et sous forme numérique ( vous êtes actuellement dessus ). Il est fort probable que le site web compte plus d'articles que le journal.</p>
+							<p>Il existe sous forme papier, et sous forme numérique (vous êtes actuellement dessus (en effet :) ) ). Il est fort probable que le site web compte plus d'articles que le journal.</p>
 						</div>
 						<div class="row section-row">
 							<div class="col-md-6">
@@ -141,21 +140,21 @@
 								</figure>
 							</div>
 							<div class="col-md-6">
-								<h3>Notre Mission</h3>
-								<p>Notre but est de créer un petit journal, entre élèves.</p>
-								<ul class="list-style">
-									<li><p>Nous essayons d'être le plus juste possible, c'est pourquoi nous mettons nos sources quand on en a.</p></li>
-									<li><p>Nous avons pour but de ne pas trop nous censurer, si nous avons envie d'écrire un article, nous l'écrivons (on abuse pas non plus).</p></li>
-									<li><p>Nous écrirons des articles sur tous les sujets possibles</p></li>
-									<li><p>S'il y a le moindre problème sur ce site web, nous essaierons de le corriger au plus vite.</p></li>
-								</ul>
+								
 							</div>
 						</div>
 					</div>
 					
 					<!-- aside -->
 					<div class="col-md-4">
-						
+						<h3>Notre Mission</h3>
+						<p>Notre but est de créer un petit journal, entre élèves.</p>
+						<ul class="list-style">
+							<li><p>Nous essayons d'être le plus juste possible, c'est pourquoi nous mettons nos sources quand on en a.</p></li>
+							<li><p>Nous avons pour but de ne pas trop nous censurer, si nous avons envie d'écrire un article, nous l'écrivons ( nous n'abuserons tout de même pas non plus :) ).</p></li>
+							<li><p>Nous écrirons des articles sur tous les sujets possibles</p></li>
+							<li><p>S'il y a le moindre problème sur ce site web, nous essaierons de le corriger au plus vite selon nos disponibilités.</p></li>
+						</ul>
 					</div>
 					<!-- /aside -->
 				</div>
@@ -217,7 +216,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<h3 class="footer-title">rejoindre notre Newsletter :</h3>
 							<div class="footer-newsletter">
 								<form>
-									<input class="input" type="email" name="newsletter" placeholder="votre email">
+									<input class="input" type="email" name="newsletter" placeholder="Votre email">
 									<button class="newsletter-btn"  id="btnewsletter" onclick="send_email_to_newsletter('btnewsletter')"><i class="fa fa-paper-plane"></i></button>
 								</form>
 							</div>
@@ -246,5 +245,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/newsletter.js" type="text/javaScript"></script>
+		<script src="js/articles_data.js" type="text/javaScript"></script>
+		<script src="js/post_articles.js" type="text/javaScript"></script>
+		<script src="js/recherche.js" type="text/javaScript"></script>
 	</body>
 </html>

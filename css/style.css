@@ -1051,3 +1051,21 @@ RESPONSIVE
 .titre_cl_gris{
     color:rgb(50, 50, 50);
 }
+
+.cache{
+    display: none;
+}
+
+.col_reseaux{
+    display:flex;
+    flex-direction: row;
+}
+
+.o_reseau{
+    margin:auto;
+}
+
+iframe{
+    border: none;
+}
+

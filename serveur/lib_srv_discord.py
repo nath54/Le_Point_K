@@ -12,8 +12,9 @@ Quand le serveur sera totalement mis en place, le channel de log recevra un mess
 Voici les commandes de ce bot : 
     /help : affiche ce message d'aide
     /quit : éteint le bot discord (seul l'administrateur du bot peut le faire)
-    * /articles : affiche l'état des articles publiés (nombre de vues, nombre de commentaires)
-    * /statues : affiche l'état du serveur (le serveur python )
+    * /articles : affiche l'état des articles publiés (id, nombre de vues, nombre de commentaires)
+    * /status : affiche l'état du serveur (le serveur python )
+    * /commentaires *id de l'article* : affiche les commentaires de l'article (id, email, objet, texte)
 """
 
 f=io.open("config.nathcfg","r",encoding="utf-8")
