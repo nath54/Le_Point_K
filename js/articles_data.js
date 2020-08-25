@@ -11,11 +11,13 @@
 //  - nbvues : le nombre de fois ou un utilisateur ouvre la page
 //  - commentaires : la liste des commentaires qui ont été postés sur l'article
 //  - enavant : si l'article est mis en avant
+//
 
 list_articles=[
     {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 fevrier 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 fevrier 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
 ]
+
 window.list_articles=list_articles;
 
 function get_date(dt){
