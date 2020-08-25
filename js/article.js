@@ -6,41 +6,12 @@ if(parameters.length>=1){
 else{
     var id_article=undefined;
 }
+window.idart=id_article;
 const lst_eco=["écologie","ecologie","ecology"];
 const lst_pol=["politique"];
 const lst_inf=["info","informatique"];
 const lst_san=["sante","santé"];
 
-function create_balise(bal){
-    if(bal==undefined){
-        return null;
-    }
-    if(bal.length==3){
-        //on crée la balise
-        var balise=document.createElement(bal[0]);
-        //on lui met ses attributs
-        for(a of bal[1]){
-            if(a.length==2){
-                balise.setAttribute(a[0],a[1]);
-            }
-        }
-        //on lui crée ses enfants
-        if(typeof(bal[2])=="string"){
-            balise.innerHTML=bal[2];
-        }
-        else{
-            for(c of bal[2]){
-                console.log(c);
-                var child=create_balise(c);
-                if(child!=null){
-                    balise.appendChild(child);
-                }
-            }
-        }
-        return balise;
-    }
-    return null;
-}
 
 function load_articles(){
     if(article_contents[id_article]!=undefined){
