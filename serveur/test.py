@@ -5,6 +5,7 @@ import json
 import logging
 import websockets
 import os
+import io
 
 
 class Serveur():
@@ -84,15 +85,15 @@ class Serveur():
         for d in data:
             dd=d.split(self.cacc)
             aa={}
-            a["id"]=str(dd[0])
-            a["titre"]=str(dd[1])
-            a["date"]=str(dd[2])
-            a["lien"]=str(dd[3])
-            a["post-img"]=str(dd[4])
-            a["alt-img"]=str(dd[5])
-            a["category"]=str(dd[6])
-            a["journal"]=str(dd[7])
-            a["nbvues"]=str(dd[8])
+            aa["id"]=str(dd[0])
+            aa["titre"]=str(dd[1])
+            aa["date"]=str(dd[2])
+            aa["lien"]=str(dd[3])
+            aa["post-img"]=str(dd[4])
+            aa["alt-img"]=str(dd[5])
+            aa["category"]=str(dd[6])
+            aa["journal"]=str(dd[7])
+            aa["nbvues"]=str(dd[8])
             aa["commentaires"]=[]
             if dd[9]!="":
                 dc=dd[9].split(self.ccac)
@@ -110,7 +111,7 @@ class Serveur():
 
 
     def articles_event(self):
-        return json.dumps({"type": "articles", **self.articles})
+        return json.dumps({"type": "articles", "articles":json.dumps(self.articles) })
 
 
     def users_event(self):
@@ -124,18 +125,18 @@ class Serveur():
 
 
     async def notify_users(self):
-        if USERS:  # asyncio.wait doesn't accept an empty list
+        if self.USERS:  # asyncio.wait doesn't accept an empty list
             message = self.users_event()
             await asyncio.wait([user.send(message) for user in self.USERS])
 
 
     async def register(self,websocket):
         self.USERS.add(websocket)
-        await notify_users()
+        await self.notify_users()
 
     async def unregister(self,websocket):
         self.USERS.remove(websocket)
-        await notify_users()
+        await self.notify_users()
 
 
     async def main_server(self, websocket, path):
@@ -148,24 +149,26 @@ class Serveur():
                 data = json.loads(message)
                 if data["action"] == "get_articles":
                     print("request get articles")
-                    await self.notify_articles()
+                    await websocket.send( self.articles_event() )
+                    #await self.notify_articles()
                 elif data["action"] == "read_article":
-                    for a in articles:
+                    for a in self.articles:
                         if a["id"]==data["id"]:
                             a["nbvues"]+=1
                             print("article vu : ",a)
-                    await self.notify_articles()
+                    #await self.notify_articles()
                 elif data["action"] == "commentaire":
                     
                     for a in self.articles:
                         if a["id"]==data["id"]:
-                            now=datetime.datetime()
+                            now=date.datetime()
                             day=str(now.year)+"-"+str(now.month)+"-"+str(now.day)
                             a["commentaire"].append({"pseudo":data["pseudo"],"email":["email"],"date":day,"message":data["message"]})
                             print("commentaire posted : ",a)
-                    await self.notify_articles()
+                    #await self.notify_articles()
                 else:
-                    logging.error("unsupported event: {}", data)
+                    logging.error("unsupported event: "+str(data))
+
         finally:
             await self.unregister(websocket)
 

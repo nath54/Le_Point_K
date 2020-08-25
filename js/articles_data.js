@@ -13,11 +13,10 @@
 //  - enavant : si l'article est mis en avant
 
 list_articles=[
-    //{"titre":"les ordi nous attaquent","date":"12 juin 2020","lien":"blog-post.html","post_img":"img/post-1.png","alt_img":"découvrez comment les ordis nous attaquent !","category":"informatique", "journal":null}
-    
     {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 fevrier 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 fevrier 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
 ]
+window.list_articles=list_articles;
 
 function get_date(dt){
     //d=dt.split(" ");
@@ -35,7 +34,6 @@ function get_date(dt){
 }
 
 function trie_articles_date(articles){
-    
     l_articles=[];
     for(a of articles){ l_articles.push(a); }
     //
@@ -65,7 +63,6 @@ function trie_articles_date(articles){
 
 
 function trie_articles_pop(articles){
-    ;
     l_articles=[];
     for(a of articles){ l_articles.push(a); }
     //
@@ -96,18 +93,22 @@ tries_info=[];
 tries_sant=[];
 tries_journaux={};
 
-for(a of list_articles){
-    if(lst_eco.includes(a["category"])){ tries_ecol.push(a); }
-    if(lst_pol.includes(a["category"])){ tries_poli.push(a); }
-    if(lst_inf.includes(a["category"])){ tries_info.push(a); }
-    if(lst_san.includes(a["category"])){ tries_sant.push(a); }
-    //
-    if(!Object.keys(tries_journaux).includes(a["journal"])){
-        tries_journaux[a["journal"]]=[a];
-    }
-    else{
-        tries_journaux[a["journal"]].push(a);
+function trie_articles(){
+    for(a of list_articles){
+        if(lst_eco.includes(a["category"])){ tries_ecol.push(a); }
+        if(lst_pol.includes(a["category"])){ tries_poli.push(a); }
+        if(lst_inf.includes(a["category"])){ tries_info.push(a); }
+        if(lst_san.includes(a["category"])){ tries_sant.push(a); }
+        //
+        if(!Object.keys(tries_journaux).includes(a["journal"])){
+            tries_journaux[a["journal"]]=[a];
+        }
+        else{
+            tries_journaux[a["journal"]].push(a);
+        }
     }
 }
+
+trie_articles();
 
 
