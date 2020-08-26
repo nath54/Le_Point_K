@@ -13,7 +13,7 @@
 //  - enavant : si l'article est mis en avant
 //
 
-list_articles=[
+var list_articles=[
     {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 fevrier 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 fevrier 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
 ]
@@ -82,11 +82,11 @@ function trie_articles_pop(articles){
 
 
 
-const lst_eco=["écologie","ecologie","ecology"];
-const lst_pol=["politique"];
-const lst_inf=["info","informatique"];
-const lst_san=["sante","santé"];
-const l_arts_pop=trie_articles_pop(list_articles);
+var lst_eco=["écologie","ecologie","ecology"];
+var lst_pol=["politique"];
+var lst_inf=["info","informatique"];
+var lst_san=["sante","santé"];
+var l_arts_pop=trie_articles_pop(list_articles);
 
 list_articles=trie_articles_date(list_articles);
 tries_ecol=[];

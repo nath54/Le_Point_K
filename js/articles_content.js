@@ -3,7 +3,7 @@
 // [balise name, [balise informations], [content]]
 
 
-article_contents={
+var article_contents={
     //ARTICLE NUCLEAIRE
     "000000":{"titre":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","dossier":"EKO-LOGIQUE - dossier",
         "content":"art_nucleaire_1/article.html"},
