@@ -7,6 +7,7 @@ else{
     var id_article=undefined;
 }
 window.idart=id_article;
+
 const lst_eco=["écologie","ecologie","ecology"];
 const lst_pol=["politique"];
 const lst_inf=["info","informatique"];
@@ -37,6 +38,12 @@ function load_articles(){
         
         $("#contenu_de_larticle").load(art["content"]); 
         
+        try{
+            websocket.send( JSON.stringify({"action":"read_article","id":id_article}) )
+        }
+        catch{
+            
+        }
         
     }
 

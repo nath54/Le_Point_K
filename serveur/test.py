@@ -132,16 +132,17 @@ class Serveur():
 
     async def register(self,websocket):
         self.USERS.add(websocket)
-        await self.notify_users()
+        #await self.notify_users()
 
     async def unregister(self,websocket):
         self.USERS.remove(websocket)
-        await self.notify_users()
+        #await self.notify_users()
 
 
     async def main_server(self, websocket, path):
-        # register(websocket) sends user_event() to websocket
+        # register(websocket)
         await self.register(websocket)
+        await websocket.send( self.articles_event() )
         try:
             #await websocket.send(articles_event())
 
@@ -166,6 +167,7 @@ class Serveur():
                             a["commentaire"].append({"pseudo":data["pseudo"],"email":["email"],"date":day,"message":data["message"]})
                             print("commentaire posted : ",a)
                     #await self.notify_articles()
+
                 else:
                     logging.error("unsupported event: "+str(data))
 

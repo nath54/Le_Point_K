@@ -15,12 +15,15 @@ websocket.onmessage = function (event) {
     }
 }
 
+function article_lu(idart){
+    websocket.send( JSON.stringify({"action":"read_article","id":idart}) )
+}
+
 function cantconnect(){
     alert("Error : can't connect to the server");
 }
 
 function commentaire_send(mes, pseudo, email, idart){
-
     websocket.send( 
         JSON.stringify({"action":"commentaire",
                         "value":mes,
