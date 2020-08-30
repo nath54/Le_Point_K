@@ -20,7 +20,7 @@ function article_lu(idart){
 }
 
 function cantconnect(){
-    alert("Error : can't connect to the server");
+    //alert("Error : can't connect to the server");
 }
 
 function commentaire_send(mes, pseudo, email, idart){
