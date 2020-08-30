@@ -1,5 +1,5 @@
 var websocket = new WebSocket("ws://127.0.0.1:6789/");
-websocket.onerror=cantconnect;
+//websocket.onerror=cantconnect;
 console.log(websocket);
 
 websocket.onmessage = function (event) {
