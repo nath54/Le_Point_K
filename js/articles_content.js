@@ -10,6 +10,9 @@ var article_contents={
     //ARTICLE GLYPHOSATE
     "000001":{"titre":"Faut-il interdire le glyphosate ?","category":"écologie","dossier":"EKO-LOGIQUE - dossier",
         "content":"art_glypho_1/article.html"},
+    //ARTICLE LINUX WINDOWS
+    "000002":{"titre":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","dossier":"",
+    "content":"art_linux_vs_windows/article.html"},
 };
 
 
