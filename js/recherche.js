@@ -29,11 +29,13 @@ function posts(articles){
         dive.appendChild(message);
     }
     
-    for(c of document.getElementById("content").children){
-        document.getElementById("content").removeChild(c);
+    if(document.getElementById("content")){
+        for(c of document.getElementById("content").children){
+            document.getElementById("content").removeChild(c);
+        }
+        document.getElementById("content").children=[];
+        document.getElementById("content").appendChild(dive);
     }
-    document.getElementById("content").children=[];
-    document.getElementById("content").appendChild(dive);
 
 }
 

@@ -1069,3 +1069,7 @@ iframe{
     border: none;
 }
 
+#contenu_de_larticle{
+    margin-left:auto;
+    margin-right:auto;
+}

@@ -8,10 +8,10 @@ else{
 }
 window.idart=id_article;
 
-const lst_eco=["écologie","ecologie","ecology"];
-const lst_pol=["politique"];
-const lst_inf=["info","informatique"];
-const lst_san=["sante","santé"];
+const lste_eco=["écologie","ecologie","ecology"];
+const lste_pol=["politique"];
+const lste_inf=["info","informatique"];
+const lste_san=["sante","santé"];
 
 
 function load_articles(){
@@ -19,19 +19,19 @@ function load_articles(){
         art=article_contents[id_article];
         document.getElementById("titre_h1").innerHTML=art["dossier"];
         document.getElementById("titre_li").innerHTML=art["dossier"];
-        if(lst_eco.includes(art["category"])){
+        if(lste_eco.includes(art["category"])){
             document.getElementById("cat_li").innerHTML="écologie";
             document.getElementById("cat_li").setAttribute("href","../category_ecologie.html");
         }
-        else if(lst_pol.includes(art["category"])){
+        else if(lste_pol.includes(art["category"])){
             document.getElementById("cat_li").innerHTML="politique";
             document.getElementById("cat_li").setAttribute("href","../category_politique.html");
         }
-        else if(lst_inf.includes(art["category"])){
+        else if(lste_inf.includes(art["category"])){
             document.getElementById("cat_li").innerHTML="informatique";
             document.getElementById("cat_li").setAttribute("href","../category_informatique.html");
         }
-        else if(lst_san.includes(art["category"])){
+        else if(lste_san.includes(art["category"])){
             document.getElementById("cat_li").innerHTML="santé";
             document.getElementById("cat_li").setAttribute("href","../category_sante.html");
         }
@@ -40,9 +40,11 @@ function load_articles(){
         
         try{
             websocket.send( JSON.stringify({"action":"read_article","id":id_article}) )
+            console.log("art_vu");
         }
         catch{
-            
+            console.log("error");
+            console.log("websocket : ",websocket);
         }
         
     }

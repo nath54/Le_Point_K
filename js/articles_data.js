@@ -19,7 +19,9 @@ var list_articles=[
     {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
 ]
 
-window.list_articles=list_articles;
+if(!window.art_recus){
+    window.list_articles=list_articles;
+}
 
 function get_date(dt){
     //d=dt.split(" ");

@@ -32,7 +32,9 @@ class Serveur():
             self.articles=[
                 {"id":"000000","titre":"Faut-il interdire le glyphosate ?","date":"14 juin 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":None,"nbvues":0,"commentaires":[]},
                 {"id":"000001","titre":"Le nucléaire, une bonne source d'énergie ?","date":"16 juin 2020","lien":"articles/art_glypho_1/article.html","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":None,"nbvues":0,"commentaires":[]},
+                {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","journal":None,"nbvues":0,"commentaires":[]},
             ]
+            self.save()
         else:
             self.load()
 
@@ -63,7 +65,7 @@ class Serveur():
             txt+=self.sectxt(str(a["category"]))+self.cacc
             txt+=self.sectxt(str(a["journal"]))+self.cacc
             txt+=self.sectxt(str(a["nbvues"]))+self.cacc
-            for c in a["commentaire"]:
+            for c in a["commentaires"]:
                 pc1,pc2,pc3,pc4=c["pseudo"],c["email"],c["date"],c["message"]
                 txt+=self.sectxt(pc1)+self.cccc
                 txt+=self.sectxt(pc2)+self.cccc
@@ -109,26 +111,21 @@ class Serveur():
             self.articles.append(aa)
         print("\narticles loaded.")
 
-
     def articles_event(self):
         return json.dumps({"type": "articles", "articles":json.dumps(self.articles) })
 
-
     def users_event(self):
         return json.dumps({"type": "users", "count": len(self.USERS)})
-
 
     async def notify_articles(self):
         if self.USERS:  # asyncio.wait doesn't accept an empty list
             message = self.articles_event()
             await asyncio.wait([user.send(message) for user in self.USERS])
 
-
     async def notify_users(self):
         if self.USERS:  # asyncio.wait doesn't accept an empty list
             message = self.users_event()
             await asyncio.wait([user.send(message) for user in self.USERS])
-
 
     async def register(self,websocket):
         self.USERS.add(websocket)
@@ -145,7 +142,6 @@ class Serveur():
         await websocket.send( self.articles_event() )
         try:
             #await websocket.send(articles_event())
-
             async for message in websocket:
                 data = json.loads(message)
                 if data["action"] == "get_articles":
@@ -157,17 +153,17 @@ class Serveur():
                         if a["id"]==data["id"]:
                             a["nbvues"]+=1
                             print("article vu : ",a)
+                    self.save()
                     #await self.notify_articles()
-                elif data["action"] == "commentaire":
-                    
+                elif data["action"] == "commentaire":                    
                     for a in self.articles:
                         if a["id"]==data["id"]:
                             now=date.datetime()
                             day=str(now.year)+"-"+str(now.month)+"-"+str(now.day)
                             a["commentaire"].append({"pseudo":data["pseudo"],"email":["email"],"date":day,"message":data["message"]})
                             print("commentaire posted : ",a)
+                    self.save()
                     #await self.notify_articles()
-
                 else:
                     logging.error("unsupported event: "+str(data))
 
@@ -177,12 +173,9 @@ class Serveur():
     def main(self):
         print("Starting server ...")
         self.start_server = websockets.serve(self.main_server, "localhost", 6789)
-
         print("Server started.")
         asyncio.get_event_loop().run_until_complete(self.start_server)
         asyncio.get_event_loop().run_forever()
-
-
 
 server=Serveur()
 server.main()
