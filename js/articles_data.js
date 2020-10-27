@@ -17,7 +17,7 @@ var list_articles=[
     {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 février 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 février 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
-    {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans ?","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
+    {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
 ]
 
 if(!window.art_recus){
