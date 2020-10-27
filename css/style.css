@@ -1020,6 +1020,7 @@ RESPONSIVE
 .img_article_gauche{
     max-width: 220px;
     max-height: 220px;
+    margin:5px;
     float:left;
 }
 
