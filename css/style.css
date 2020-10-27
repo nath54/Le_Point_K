@@ -1026,7 +1026,8 @@ RESPONSIVE
 .img_article_droite{
     max-width: 220px;
     max-height: 220px;
-    float:left;
+    float:right;
+    margin:5px;
 }
 
 .figcaptionart {
