@@ -6,7 +6,7 @@ Author: yaminncco
 Colors:
 	Body : #3d455c
 	Headers : #212631
-	Primary : #212631 #4BB92F #ff8700 #0078ff #8d00ff
+	Primary : #212631 #4BB92F #ff8700 #0078ff red
 	Dark : #212631
 	Grey : #eceef2 #a7b3c6 #fbfbfd
 
@@ -307,7 +307,7 @@ RESPONSIVE
      background-color: #0078ff;
 }
  .nav-menu li.cat-4 a:after {
-     background-color: #8d00ff;
+     background-color: red;
 }
  .nav-menu li a:hover, .nav-menu li a:focus {
      background-color: transparent;
@@ -323,7 +323,7 @@ RESPONSIVE
      color: #0078ff;
 }
  .nav-menu li.cat-4 a:hover, .nav-menu li.cat-4 a:focus {
-     color: #8d00ff;
+     color: red;
 }
 /*----------------------------*\
 	search
@@ -559,7 +559,7 @@ RESPONSIVE
      background-color: #0078ff;
 }
  .post-meta .post-category.cat-4 {
-     background-color: #8d00ff;
+     background-color: red;
 }
  .post-meta .post-date {
      font-size: 13px;
@@ -814,7 +814,7 @@ RESPONSIVE
      background-color:  #0078ff;
 }
  .category-widget ul li > a.cat-4 > span {
-     background-color: #8d00ff;
+     background-color: red;
 }
  .category-widget ul li > a:hover, .category-widget ul li > a:focus {
      text-decoration:none;
@@ -829,7 +829,7 @@ RESPONSIVE
      color: #0078ff;
 }
  .category-widget ul li > a.cat-4:hover, .category-widget ul li > a.cat-4:focus {
-     color: #8d00ff;
+     color: red;
 }
 /*----------------------------*\
 	tags
