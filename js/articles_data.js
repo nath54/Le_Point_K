@@ -66,7 +66,6 @@ function trie_articles_date(articles){
     return l_articles;
 }
 
-
 function trie_articles_pop(articles){
     l_articles=[];
     for(a of articles){ l_articles.push(a); }
@@ -82,8 +81,6 @@ function trie_articles_pop(articles){
     }
     return l_articles;
 }
-
-
 
 var lst_eco=["écologie","ecologie","ecology"];
 var lst_pol=["politique"];
@@ -115,5 +112,3 @@ function trie_articles(){
 }
 
 trie_articles();
-
-
