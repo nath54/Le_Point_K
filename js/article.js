@@ -10,7 +10,7 @@ window.idart=id_article;
 
 const lste_eco=["écologie","ecologie","ecology"];
 const lste_pol=["politique"];
-const lste_inf=["info","informatique"];
+const lste_inf=["sciences","science"];
 const lste_san=["sante","santé"];
 
 
@@ -28,8 +28,8 @@ function load_articles(){
             document.getElementById("cat_li").setAttribute("href","../category_politique.html");
         }
         else if(lste_inf.includes(art["category"])){
-            document.getElementById("cat_li").innerHTML="informatique";
-            document.getElementById("cat_li").setAttribute("href","../category_informatique.html");
+            document.getElementById("cat_li").innerHTML="science";
+            document.getElementById("cat_li").setAttribute("href","../category_science.html");
         }
         else if(lste_san.includes(art["category"])){
             document.getElementById("cat_li").innerHTML="santé";
@@ -44,7 +44,7 @@ function load_articles(){
         }
         catch{
             console.log("error");
-            console.log("websocket : ",websocket);
+            //console.log("websocket : ",websocket);
         }
         
     }
