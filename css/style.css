@@ -1017,6 +1017,18 @@ RESPONSIVE
     max-height: 150px;
 }
 
+.img_article_gauche{
+    max-width: 220px;
+    max-height: 220px;
+    float:left;
+}
+
+.img_article_droite{
+    max-width: 220px;
+    max-height: 220px;
+    float:left;
+}
+
 .figcaptionart {
     background-color: #222;
     color: #fff;
