@@ -12,6 +12,10 @@ var article_contents={
     //ARTICLE LINUX WINDOWS
     "000002":{"titre":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","dossier":"",
     "content":"art_linux_vs_windows/article.html"},
+    //ARTICLE AEROTRAIN
+    "000003":{"titre":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"informatique","dossier":"",
+    "content":"art_aerotrain/article.html"},
 };
+
 
 

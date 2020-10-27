@@ -14,18 +14,20 @@
 //
 
 var list_articles=[
-    {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 fevrier 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
-    {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 fevrier 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
+    {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 février 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
+    {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 février 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
     {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
+    {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans ?","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"informatique","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
 ]
 
 if(!window.art_recus){
     window.list_articles=list_articles;
 }
 
-function get_date(dt){
-    //d=dt.split(" ");
-    d=["16","février","2020"];
+function get_date(dicte){
+    if(dicte==undefined){ return null; }
+    dt=dicte.date;
+    d=dt.split(" ");
     j=parseInt(d[0]);
     //mois
     m=0
@@ -46,21 +48,24 @@ function trie_articles_date(articles){
         for(j=0; j<i; j++){
             di=get_date(l_articles[i]);
             dj=get_date(l_articles[j]);
-            ji=di[0];
-            mi=di[1];
-            ai=di[2];
-            jj=j[0];
-            mj=dj[1];
-            aj=dj[2];
-            var echange=false;
-            if(ai>aj){ echange=true; }
-            else if(ai==aj && mi>mj){ echange=true; }
-            else if(mi==mj && ji>jj){ echange=true; }
-            if(echange){
-                temp=l_articles[i];
-                l_articles[i]=l_articles[j];
-                l_articles[j]=temp;
+            if(di!=null && dj!=null){
+                ji=di[0];
+                mi=di[1];
+                ai=di[2];
+                jj=j[0];
+                mj=dj[1];
+                aj=dj[2];
+                var echange=false;
+                if(ai>aj){ echange=true; }
+                else if(ai==aj && mi>mj){ echange=true; }
+                else if(mi==mj && ji>jj){ echange=true; }
+                if(echange){
+                    temp=l_articles[i];
+                    l_articles[i]=l_articles[j];
+                    l_articles[j]=temp;
+                }
             }
+            
         }
     }
     return l_articles;

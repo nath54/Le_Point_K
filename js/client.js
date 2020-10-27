@@ -1,4 +1,4 @@
-
+/*
 window.art_recus=false;
 
 var websocket = new WebSocket("ws://127.0.0.1:6789/");
@@ -37,3 +37,4 @@ function commentaire_send(mes, pseudo, email, idart){
     );
 }
 
+*/
