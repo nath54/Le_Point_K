@@ -13,11 +13,7 @@ var article_contents={
     "000002":{"titre":"Linux ou Windows, lequel vous est le plus adapté ?","category":"science","dossier":"",
     "content":"art_linux_vs_windows/article.html"},
     //ARTICLE AEROTRAIN
-<<<<<<< HEAD
-    "000003":{"titre":"L’Aérotrain, le futur d’il y a 50 ans","category":"informatique","dossier":"",
-=======
-    "000003":{"titre":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"science","dossier":"",
->>>>>>> c17b644c5de621c8e278aea376ac290bc81c9d04
+    "000003":{"titre":"L’Aérotrain, le futur d’il y a 50 ans","category":"science","dossier":"",
     "content":"art_aerotrain/article.html"},
 };
 
