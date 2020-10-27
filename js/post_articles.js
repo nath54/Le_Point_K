@@ -74,7 +74,7 @@ function create_article(article){
     }
     else if(lst_inf.includes(article["category"])){
         aa2.setAttribute("class","post-category cat-3");
-        aa2.setAttribute("href","category_informatique.html");
+        aa2.setAttribute("href","category_science.html");
     }
     else if(lst_san.includes(article["category"])){
         aa2.setAttribute("class","post-category cat-4");
