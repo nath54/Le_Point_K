@@ -15,6 +15,7 @@ var article_contents={
     //ARTICLE AEROTRAIN
     "000003":{"titre":"L’Aérotrain, le futur d’il y a 50 ans","category":"science","dossier":"",
     "content":"art_aerotrain/article.html"},
+    
 };
 
 

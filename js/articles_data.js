@@ -13,16 +13,23 @@
 //  - enavant : si l'article est mis en avant
 //
 
-var list_articles=[
-    {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 février 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
-    {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 février 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":"écologie","journal":null,"nbvues":0,"commentaires":[],"enavant":false},
-    {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":"science","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
-    {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":"science","journal":null,"nbvues":0,"commentaires":[],"enavant":false},    
-]
+/*
+Catégories :
 
-if(!window.art_recus){
-    window.list_articles=list_articles;
-}
+  1 : Écologie
+  2 : Politique
+  3 : Sciences et Santé
+  4 : Culture
+
+*/
+
+
+var list_articles=[
+    {"id":"000000","titre":"Le nucléaire, une bonne source d'énergie ?","date":"15 février 2020","lien":"articles/article.html?000000","post-img":"articles/art_nucleaire_1/post.jpeg","alt-img":"Le nucléaire, une bonne source d'énergie ?","category":1},
+    {"id":"000001","titre":"Faut-il interdire le glyphosate ?","date":"17 février 2020","lien":"articles/article.html?000001","post-img":"articles/art_glypho_1/img1.jpg","alt-img":"Faut-il interdire le glyphosate ?","category":1},
+    {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":3},    
+    {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":3},    
+]
 
 function get_date(dicte){
     if(dicte==undefined){ return null; }
@@ -71,48 +78,18 @@ function trie_articles_date(articles){
     return l_articles;
 }
 
-function trie_articles_pop(articles){
-    l_articles=[];
-    for(a of articles){ l_articles.push(a); }
-    //
-    for(i=0; i<l_articles.length; i++){
-        for(j=0; j<i; j++){
-            if(l_articles[i]["nbvues"]>l_articles[j]["nbvues"]){
-                temp=l_articles[i];
-                l_articles[i]=l_articles[j];
-                l_articles[j]=temp;
-            }
-        }
-    }
-    return l_articles;
-}
-
-var lst_eco=["écologie","ecologie","ecology"];
-var lst_pol=["politique"];
-var lst_inf=["info","science"];
-var lst_san=["sante","santé"];
-var l_arts_pop=trie_articles_pop(list_articles);
 
 list_articles=trie_articles_date(list_articles);
-tries_ecol=[];
-tries_poli=[];
-tries_info=[];
-tries_sant=[];
-tries_journaux={};
+tries = {
+    1 : [],
+    2 : [],
+    3 : [],
+    4 : []
+}
 
 function trie_articles(){
     for(a of list_articles){
-        if(lst_eco.includes(a["category"])){ tries_ecol.push(a); }
-        if(lst_pol.includes(a["category"])){ tries_poli.push(a); }
-        if(lst_inf.includes(a["category"])){ tries_info.push(a); }
-        if(lst_san.includes(a["category"])){ tries_sant.push(a); }
-        //
-        if(!Object.keys(tries_journaux).includes(a["journal"])){
-            tries_journaux[a["journal"]]=[a];
-        }
-        else{
-            tries_journaux[a["journal"]].push(a);
-        }
+        tries[a["category"]].push(a);
     }
 }
 
