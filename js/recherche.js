@@ -28,7 +28,7 @@ function posts(articles){
         message.innerHTML="Aucun résultat trouvé";
         dive.appendChild(message);
     }
-    
+
     if(document.getElementById("content")){
         for(c of document.getElementById("content").children){
             document.getElementById("content").removeChild(c);
