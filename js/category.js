@@ -34,5 +34,9 @@ function init_cat(){
         elt.innerHTML = categories[cat].nom;
     }
     //
+    var d = document.getElementById("row_posts_recent");
+    d.setAttribute("id", "row_cat"+cat+"_posts");
 
+    // On finit par poster les articles
+    post_articles();
 }
