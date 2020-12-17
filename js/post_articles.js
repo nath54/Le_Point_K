@@ -1,7 +1,7 @@
 
 /*
     <div class="post post-thumb">
-        <a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
+        <a class="post-img" href="blog-post.html"><img class="img_post" src="./img/post-1.jpg" alt=""></a>
         <div class="post-body">
             <div class="post-meta">
                 <a class="post-category cat-2" href="category.html">JavaScript</a>
@@ -52,9 +52,9 @@ function create_article(article){
     aa.setAttribute("href",article["lien"]);
 
     var img=document.createElement("img");
+    img.setAttribute("class","img_post");
     img.setAttribute("src",article["post-img"]);
     img.setAttribute("alt",article["alt-img"]);
-    
 
     var div3=document.createElement("div");
     div3.setAttribute("class","post-body");
@@ -62,7 +62,6 @@ function create_article(article){
     var div4=document.createElement("div");
     div4.setAttribute("class","post-meta");
 
-    
     var aa2=document.createElement("a");
     if(article["category"]==1){
         aa2.setAttribute("class","post-category cat-1");
@@ -82,8 +81,7 @@ function create_article(article){
     }
     else{
         aa2.setAttribute("class","post-category");
-    }    
-
+    }
 
     var span=document.createElement("span");
     span.setAttribute("class","post-date");
