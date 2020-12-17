@@ -91,10 +91,10 @@ function create_article(article){
     aa3.setAttribute("href",article["lien"]);
 
     var h3=document.createElement("h3");
-    h3.setAttribute("class","post-title");    
+    h3.setAttribute("class","post-title");
     h3.innerHTML=article["titre"];
 
-    aa3.appendChild(h3) 
+    aa3.appendChild(h3);
 
     div4.appendChild(aa2);
     div4.appendChild(span);
