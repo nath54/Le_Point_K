@@ -81,7 +81,6 @@ function trie_articles_date(articles){
                     l_articles[j]=temp;
                 }
             }
-            
         }
     }
     return l_articles;
@@ -96,10 +95,6 @@ tries = {
     4 : []
 }
 
-function trie_articles(){
-    for(a of list_articles){
-        tries[a["category"]].push(a);
-    }
+for(a of list_articles){
+    tries[a["category"]].push(a);
 }
-
-trie_articles();

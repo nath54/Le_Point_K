@@ -18,8 +18,6 @@
 
 //
 
-//alert("il y a actuellement "+list_articles.length+" articles sur le site");
-
 if(document.getElementById("nb_art_1")!=undefined){
     document.getElementById("nb_art_1").innerHTML=tries[1].length;
 }
@@ -99,66 +97,59 @@ function create_article(article){
     div4.appendChild(aa2);
     div4.appendChild(span);
 
-    aa.appendChild(img); 
+    aa.appendChild(img);
 
     div3.appendChild(div4);
     div3.appendChild(aa3)
-    
+
     div2.appendChild(aa);
     div2.appendChild(div3);
 
     return div2;
 }
 
-
-
-
-
-function post_articles(){
-    if(list_articles!=undefined){
-        var nb_recent=0;
-        var nbs = {1:0, 2:0, 3:0, 4:0};
-        var nb_max=3;
-        for(index=list_articles.length;index>=0;index--){
-            a=list_articles[index];
-            if(a!=undefined){
-                //
-                if(nb_recent < nb_max && document.getElementById("row_recent_posts")!=undefined ){
-                    var art=create_article(a);
-                     if(art!=null){ document.getElementById("row_recent_posts").appendChild( art ); }
-                    nb_recent+=1;
-                }
-                
-                var c = a["category"];
-                if(nbs[c] < nb_max && document.getElementById("row_cat"+c+"_posts")!=undefined ){
-                    var art=create_article(a);
-                    if(art!=null){ document.getElementById("row_cat"+c+"_posts").appendChild( art ); }
-                    nbs[c]+=1;
-                }
-                
-                
-            }
-            
-        }
-    }
-    
-}
+window.nb_recent=0;
+window.nbs = {1:0, 2:0, 3:0, 4:0};
+window.nb_max=3;
 
 function test_is_already(idrow,idp){
+    if(document.getElementById(idrow)==undefined){
+        return false;
+    }
     for(c of document.getElementById(idrow).children){
         if(c.id==idp){ return true; }
     }
     return false;
 }
 
+function post_articles(){
+    if(list_articles!=undefined){
+        for(index=list_articles.length;index>=0;index--){
+            a=list_articles[index];
+            if(a!=undefined){
+                //
+                if(!test_is_already("row_recent_posts", a["id"]) && window.nb_recent < window.nb_max && document.getElementById("row_recent_posts")!=undefined ){
+                    var art=create_article(a);
+                    if(art!=null){ document.getElementById("row_recent_posts").appendChild( art ); }
+                    window.nb_recent+=1;
+                }
+
+                var c = a["category"];
+                if(!test_is_already("row_cat"+c+"_posts", a["id"]) && window.nbs[c] < window.nb_max && document.getElementById("row_cat"+c+"_posts")!=undefined ){
+                    var art=create_article(a);
+                    if(art!=null){ document.getElementById("row_cat"+c+"_posts").appendChild( art ); }
+                    window.nbs[c]+=1;
+                }
+            }
+        }
+    }
+}
+
+
+
 function load_more(idrow,tipe,nb){
     //
-    var nb_a=0;
-
-    if(nb_a==0){
-        var dd=document.createElement("div");
-        document.getElementById(idrow).appendChild(dd);
-    }
-    
+    window.nb_max=3;
+    post_articles();
 }
 
