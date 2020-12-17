@@ -8,7 +8,10 @@ var categories = {
 
 function init_cat(){
     var cat = 1;
-    if(window.location.href.startsWith("category.html")){
+    var hr = window.location.href.split("/");
+    var hl = hr[hr.length-1];
+    console.log(hl);
+    if(hl.startsWith("category.html")){
         var parameters = location.search.substring(1).split("&");
         if(parameters.length>=1){
             cat = parseInt(parameters[0]);
