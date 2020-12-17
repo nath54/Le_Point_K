@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head id="head">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,8 +29,7 @@
 		<![endif]-->
 
     </head>
-	<body>
-		
+	<body onload="init_cat();">
 		<!-- Header -->
 		<header id="header">
 			<!-- Nav -->
@@ -46,15 +45,17 @@
 
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
+							<!--
 							<li><a href="../category_nos_favoris.html">Nos favoris</a></li>
 							<li><a href="../category_article_des_journaux.html">Articles des journaux</a></li>
-							<li class="cat-1"><a href="../category_ecologie.html">Ecologie</a></li>
-							<li class="cat-2"><a href="../category_politique.html">Politique</a></li>
-							<li class="cat-3"><a href="../category_science.html">Science</a></li>
-							<li class="cat-4"><a href="../category_sante.html">Santé</a></li>
+							-->
+							<li class="cat-1"><a href="../category.html?1" class="ncat1">Ecologie</a></li>
+							<li class="cat-2"><a href="../category.html?2" class="ncat2">Politique</a></li>
+							<li class="cat-3"><a href="../category.html?3" class="ncat3">Science</a></li>
+							<li class="cat-4"><a href="../category.html?4" class="ncat4">Santé</a></li>
 						</ul>
 						<!-- /nav -->
-						
+
 						<!-- search & aside toggle -->
 						<div class="nav-btns">
 							<button class="aside-btn"><i class="fa fa-bars"></i></button>
@@ -81,14 +82,13 @@
 						</ul>
 					</div>
 					<!-- /nav -->
-					
+
 					<!-- social links -->
 					<div class="section-row">
 						<h3>Suivez nous</h3>
 						<ul class="nav-aside-social">
 							<li><a href="https://instagram.com/lepointk_off?igshid=tmvioijejrzq"><i class="fa fa-instagram"></i></a></li>
 							<li><a href="https://discord.gg/5NUZFbw"><i class="fa fa-discord"></i></a></li>
-							
 						</ul>
 					</div>
 					<!-- /social links -->
@@ -100,7 +100,7 @@
 				<!-- Aside Nav -->
 			</div>
 			<!-- /Nav -->
-			
+
 			<!-- Page Header -->
 			<div class="page-header">
 				<div class="container">
@@ -109,9 +109,11 @@
 							<ul class="page-header-breadcrumb">
 								<li><a href="../main.html">Accueil</a></li>
 								<li><a id="cat_li" href="../main.html">Catégorie</a></li>
-								<li id="titre_li">Titre</li>
+								<!-- <li id="titre_li">Titre</li> -->
 							</ul>
+							<!--
 							<h1 id="titre_h1">Titre</h1>
+							-->
 						</div>
 					</div>
 				</div>
@@ -126,7 +128,7 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row" id="contenu_de_larticle">
-					
+
 				</div>
 				<!-- /row -->
 			</div>
@@ -171,10 +173,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<div class="footer-widget">
 									<h3 class="footer-title">Catégories :</h3>
 									<ul class="footer-links">
-										<li><a href="../category_ecologie.html">Écologie</a></li>
-										<li><a href="../category_politique.html">Politique</a></li>
-										<li><a href="../category_science.html">Science</a></li>
-										<li><a href="../category_sante.html">Santé</a></li>
+										<li><a href="../category.html?1" class="ncat1">Écologie</a></li>
+										<li><a href="../category.html?2" class="ncat2">Politique</a></li>
+										<li><a href="../category.html?3" class="ncat3">Science</a></li>
+										<li><a href="../category.html?4" class="ncat4">Santé</a></li>
 									</ul>
 								</div>
 							</div>
@@ -210,10 +212,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="../js/client.js" type="text/javascript"></script>
 		<script src="../js/main.js" type="text/javascript"></script>
 		<script src="../js/articles_content.js" type="text/javascript"></script>
+		<script src="../js/articles_data.js" type="text/javascript"></script>
 		<script src="../js/article.js" type="text/javascript"></script>
 		<script src="../js/articles_data.js"  type="text/javascript"></script>
 		<script src="../js/post_articles.js"  type="text/javascript"></script>
 		<script src="../js/recherche.js"  type="text/javascript"></script>
 		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script src="../js/category.js"></script>
 	</body>
 </html>
