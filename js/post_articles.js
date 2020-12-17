@@ -143,6 +143,31 @@ function post_articles(){
             }
         }
     }
+    //
+    var id_bt="bt_more_main";
+    if(document.getElementById(id_bt)!=undefined){
+        if(window.nb_max>=list_articles.length){
+            document.getElementById(id_bt).style.display = "none";
+        }
+        else{
+            document.getElementById(id_bt).style.display = "initial";
+        }
+    }
+    //
+    var cat=0;
+    var parameters = location.search.substring(1).split("&");
+    if(parameters.length>=1){
+        cat = parseInt(parameters[0]);
+    }
+    id_bt="bt_more_cat";
+    if(document.getElementById(id_bt)!=undefined && cat!=0){
+        if(window.nb_max>=tries[cat].length){
+            document.getElementById(id_bt).style.display = "none";
+        }
+        else{
+            document.getElementById(id_bt).style.display = "initial";
+        }
+    }
 }
 
 
