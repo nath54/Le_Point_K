@@ -30,13 +30,13 @@ var list_articles=[
     {"id":"000002","titre":"Linux ou Windows, lequel vous est le plus adapté ?","date":"30 août 2020","lien":"articles/article.html?000002","post-img":"articles/art_linux_vs_windows/post.svg","alt-img":"Linux ou Windows, lequel vous est le plus adapté ?","category":3},
     {"id":"000003","titre":"L’Aérotrain, le futur d’il y a 50 ans","date":"27 octobre 2020","lien":"articles/article.html?000003","post-img":"articles/art_aerotrain/img_0.jpg","alt-img":"L’Aérotrain, le futur d’il y a 50 ans ?","category":3},
     {"id":"000004","titre":"BLAME!, une errance contemplative dans un monde dévasté","date":"15 decembre 2020","lien":"articles/article.html?000004","post-img":"articles/art_blame_1/img_1.jpg","alt-img":"","category":4},
-    {"id":"000005","titre":"La liberté d'expression et le Blasphème","date":"15 decembre 2020","lien":"articles/article.html?000005","post-img":"","alt-img":"","category":2},
+    {"id":"000005","titre":"La liberté d'expression et le Blasphème","date":"15 decembre 2020","lien":"articles/article.html?000005","post-img":"articles/art_blaspheme_1/img_1.jpg","alt-img":"","category":2},
     {"id":"000006","titre":"Brazil, l'espoir dans une réalité absurde","date":"15 decembre 2020","lien":"articles/article.html?000006","post-img":"articles/art_brazil_1/img_1.jpg","alt-img":"","category":4},
     {"id":"000007","titre":"Agnès Buzyn dans la crise du COVID-19","date":"15 decembre 2020","lien":"articles/article.html?000007","post-img":"articles/art_buzin_1/img1.jpg","alt-img":"","category":2},
-    {"id":"000008","titre":"COVID-19 : symptôme d'une France en voie d'implosion","date":"15 decembre 2020","lien":"articles/article.html?000008","post-img":"","alt-img":"","category":3},
+    {"id":"000008","titre":"COVID-19 : symptôme d'une France en voie d'implosion","date":"15 decembre 2020","lien":"articles/article.html?000008","post-img":"articles/art_covid_19_1/img_1.jpg","alt-img":"","category":3},
     {"id":"000009","titre":"Le pissenlit, la plante qui nous divise","date":"15 decembre 2020","lien":"articles/article.html?000009","post-img":"articles/art_pisselenlit_1/img_1.jpg","alt-img":"","category":1},
     {"id":"000010","titre":"Une nouvelle prépa à Poinca ?","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_poinca_mpi_1/img_1.jpg","alt-img":"","category":3},
-    {"id":"000011","titre":"La provocation a-t-elle sa place dans un débat ?","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"","alt-img":"","category":2},
+    {"id":"000011","titre":"La provocation a-t-elle sa place dans un débat ?","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_provoc_debat_1/img_1.jpg","alt-img":"","category":2},
     {"id":"000012","titre":"Sappho, la poètesse oubliée","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_sapho_1/img_1.png","alt-img":"","category":4},
 ]
 
