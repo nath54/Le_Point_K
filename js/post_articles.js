@@ -149,7 +149,7 @@ function post_articles(){
 
 function load_more(idrow,tipe,nb){
     //
-    window.nb_max=3;
+    window.nb_max+=3;
     post_articles();
 }
 
