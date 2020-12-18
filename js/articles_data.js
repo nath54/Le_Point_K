@@ -36,8 +36,8 @@ var list_articles=[
     {"id":"000008","titre":"COVID-19 : symptôme d'une France en voie d'implosion","date":"15 decembre 2020","lien":"articles/article.html?000008","post-img":"articles/art_covid_19_1/img_1.jpg","alt-img":"","category":3},
     {"id":"000009","titre":"Le pissenlit, la plante qui nous divise","date":"15 decembre 2020","lien":"articles/article.html?000009","post-img":"articles/art_pisselenlit_1/img_1.jpg","alt-img":"","category":1},
     {"id":"000010","titre":"Une nouvelle prépa à Poinca ?","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_poinca_mpi_1/img_1.jpg","alt-img":"","category":3},
-    {"id":"000011","titre":"La provocation a-t-elle sa place dans un débat ?","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_provoc_debat_1/img_1.jpg","alt-img":"","category":2},
-    {"id":"000012","titre":"Sappho, la poètesse oubliée","date":"15 decembre 2020","lien":"articles/article.html?000010","post-img":"articles/art_sapho_1/img_1.png","alt-img":"","category":4},
+    {"id":"000011","titre":"La provocation a-t-elle sa place dans un débat ?","date":"15 decembre 2020","lien":"articles/article.html?000011","post-img":"articles/art_provoc_debat_1/img_1.jpg","alt-img":"","category":2},
+    {"id":"000012","titre":"Sappho, la poètesse oubliée","date":"15 decembre 2020","lien":"articles/article.html?000012","post-img":"articles/art_sapho_1/img_1.png","alt-img":"","category":4},
 ]
 
 function get_date(dicte){
